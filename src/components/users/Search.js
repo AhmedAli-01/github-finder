@@ -7,7 +7,8 @@ class Search extends Component {
   };
   static PropType = {
     searchUsers: PropType.func.isRequired,
-    ckearUsers: PropType.func.isRequired
+    clearUsers: PropType.func.isRequired,
+    showClear: PropType.bool.isRequired
   };
   onSubmit = e => {
     e.preventDefault();
@@ -32,12 +33,14 @@ class Search extends Component {
             className='btn btn-dark btn-block'
           />
         </form>
-        <button
-          className='btn btn-light btn-block'
-          onClick={this.props.clearUsers}
-        >
-          Clear
-        </button>
+        {this.props.showClear && (
+          <button
+            className='btn btn-light btn-block'
+            onClick={this.props.clearUsers}
+          >
+            Clear
+          </button>
+        )}
       </div>
     );
   }
