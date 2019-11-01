@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import PropType from 'prop-types';
+import PropTypes from 'prop-types';
 
 class Search extends Component {
   state = {
     text: ''
   };
   static PropType = {
-    searchUsers: PropType.func.isRequired,
-    clearUsers: PropType.func.isRequired,
-    showClear: PropType.bool.isRequired
+    searchUsers: PropTypes.func.isRequired,
+    clearUsers: PropTypes.func.isRequired,
+    showClear: PropTypes.bool.isRequired,
+    setAlert: PropTypes.func.isRequired
   };
   onSubmit = e => {
     e.preventDefault();
